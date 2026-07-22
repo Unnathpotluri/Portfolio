@@ -78,7 +78,7 @@
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.25rem;
             font-size: 0.92rem;
             font-weight: 500;
         }
@@ -220,7 +220,7 @@
             font-family: 'Newsreader', Georgia, serif;
         }
 
-        /* Certificates Grid */
+        /* Certificates & Skills Grid */
         .cert-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -253,6 +253,43 @@
         .cert-card p {
             font-size: 0.88rem;
             color: var(--text-muted);
+        }
+
+        /* Skills Pill Category Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .skill-category h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #334155;
         }
 
         /* Featured Projects */
@@ -399,7 +436,7 @@
             fill: currentColor;
         }
 
-        /* TOTALLY TRANSPARENT LIGHTBOX OVERLAY (NO BLUR, FULL PAGE VISIBILITY) */
+        /* LIGHTBOX OVERLAY */
         .lightbox-modal {
             display: none;
             position: fixed;
@@ -408,8 +445,8 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: transparent; /* Totally transparent */
-            pointer-events: none; /* Lets you see page behind */
+            background-color: transparent;
+            pointer-events: none;
             align-items: center;
             justify-content: center;
             flex-direction: column;
@@ -417,7 +454,7 @@
 
         .lightbox-modal.active {
             display: flex;
-            pointer-events: auto; /* Active lightbox receives clicks */
+            pointer-events: auto;
         }
 
         .lightbox-content {
@@ -499,7 +536,7 @@
             transform: translateY(-50%) scale(1.08);
         }
 
-        /* Experience Timeline */
+        /* Timeline Items (Experience & Education) */
         .exp-item {
             padding-bottom: 2.25rem;
             margin-bottom: 2.25rem;
@@ -548,8 +585,8 @@
             .project-info { padding: 1.5rem; }
             body { padding: 1.5rem 1rem 4rem 1rem; }
             .btn-side-floating { right: 1rem; bottom: 1rem; padding: 0.7rem 1.1rem; font-size: 0.85rem; }
-            .lightbox-prev { left: 0.5rem; }
-            .lightbox-next { right: 0.5rem; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 0.85rem; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -572,14 +609,16 @@
             <div class="nav-links">
                 <a href="#overview">Overview</a>
                 <a href="#credentials">Credentials</a>
+                <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
             </div>
         </nav>
 
         <!-- Hero Title Block -->
         <header>
-            <h1 class="hero-title">Civil Field Engineer, QA/QC Inspector & Materials Testing Specialist.</h1>
+            <h1 class="hero-title">Civil Engineer, QA/QC Inspector & Materials Testing Specialist.</h1>
             <p class="hero-subtitle">Combining rigorous field testing standards (ASTM/AASHTO) with data management to deliver safe, fully compliant civil infrastructure projects.</p>
             
             <div class="meta-pills-container">
@@ -643,11 +682,64 @@
             </div>
         </section>
 
+        <!-- Technical Skills -->
+        <section id="skills">
+            <div class="section-header">
+                <h2 class="section-title">Technical Skills</h2>
+                <span class="section-sub">03 / Capabilities</span>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Core Competencies</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Construction Materials Testing (CMT)</span>
+                        <span class="tag">QA/QC Field Inspection</span>
+                        <span class="tag">Concrete Placement & Testing</span>
+                        <span class="tag">Soil Compaction & Core Sampling</span>
+                        <span class="tag">Site Layout & Survey Control</span>
+                        <span class="tag">Earthwork & Subgrade Verification</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Field Testing Standards</h3>
+                    <div class="skill-tags">
+                        <span class="tag">ASTM Standards</span>
+                        <span class="tag">AASHTO Guidelines</span>
+                        <span class="tag">DOT Specifications</span>
+                        <span class="tag">Nuclear Density Gauge Testing</span>
+                        <span class="tag">Concrete Slump & Air Test</span>
+                        <span class="tag">Compressive Strength Analysis</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Engineering Software</h3>
+                    <div class="skill-tags">
+                        <span class="tag">AutoCAD</span>
+                        <span class="tag">Civil 3D</span>
+                        <span class="tag">Microsoft Excel / Data Analytics</span>
+                        <span class="tag">Technical Report Writing</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Management & Operations</h3>
+                    <div class="skill-tags">
+                        <span class="tag">IT & Project Management</span>
+                        <span class="tag">Safety Compliance (OSHA)</span>
+                        <span class="tag">Contractor & Field Team Coordination</span>
+                        <span class="tag">Material Compliance Logging</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Projects Carousel Grid -->
         <section id="projects">
             <div class="section-header">
                 <h2 class="section-title">Featured Field Projects</h2>
-                <span class="section-sub">03 / Visual Case Studies</span>
+                <span class="section-sub">04 / Visual Case Studies</span>
             </div>
             <div class="project-list">
 
@@ -655,7 +747,7 @@
                 <div class="project-card">
                     <div class="card-slider">
                         <div class="card-slide active">
-                            <img src="land-dev-1.jpeg" alt="Site Clearing & Boundary Control" onerror="this.src='https://via.placeholder.com/820x380?text=Phase+1:+Site+Clearing+%26+Boundary+Control'">
+                            <img src="land-dev-1.jpg" alt="Site Clearing & Boundary Control" onerror="this.src='https://via.placeholder.com/820x380?text=Phase+1:+Site+Clearing+%26+Boundary+Control'">
                         </div>
                         <div class="card-slide">
                             <img src="land-dev-2.jpeg" alt="Mass Earthwork & Compaction" onerror="this.src='https://via.placeholder.com/820x380?text=Phase+2:+Mass+Earthwork+%26+Compaction'">
@@ -665,6 +757,12 @@
                         </div>
                         <div class="card-slide">
                             <img src="land-dev-4.jpeg" alt="Subgrade Preparation & Pad Inspection" onerror="this.src='https://via.placeholder.com/820x380?text=Phase+4:+Subgrade+Prep+%26+Pad+Inspection'">
+                        </div>
+                        <div class="card-slide">
+                            <img src="land-dev-5.jpeg" alt="Subgrade Preparation & Pad Inspection" onerror="this.src='https://via.placeholder.com/820x380?text=Phase+4:+Subgrade+Prep+%26+Pad+Inspection'">
+                        </div>
+                        <div class="card-slide">
+                            <img src="land-dev-6.jpeg" alt="Subgrade Preparation & Pad Inspection" onerror="this.src='https://via.placeholder.com/820x380?text=Phase+4:+Subgrade+Prep+%26+Pad+Inspection'">
                         </div>
                         <button class="card-prev" onclick="moveCardSlide(this, -1)">❮</button>
                         <button class="card-next" onclick="moveCardSlide(this, 1)">❯</button>
@@ -731,13 +829,27 @@
         <section id="experience">
             <div class="section-header">
                 <h2 class="section-title">Professional Experience</h2>
-                <span class="section-sub">04 / History</span>
+                <span class="section-sub">05 / History</span>
+            </div>
+
+            <!-- Newly Added ECS Experience Role -->
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span class="exp-role">Field Technician — ECS (Engineering Consulting Services)</span>
+                    <span class="exp-time">Dallas, TX | Aug 2026 – Present</span>
+                </div>
+                <ul class="stamatiou-bullets">
+                    <li>Perform field inspections and construction materials testing across commercial and municipal development sites.</li>
+                    <li>Conduct subgrade evaluations, foundation bearing capacity tests, and deep foundation installation inspections.</li>
+                    <li>Execute nuclear gauge soil compaction testing and concrete QA/QC sampling per ASTM and TxDOT standards.</li>
+                    <li>Generate detailed daily field reports, engineering recommendations, and client compliance tracking summaries.</li>
+                </ul>
             </div>
 
             <div class="exp-item">
                 <div class="exp-row">
                     <span class="exp-role">Construction Materials Technician — DLZ Corporation</span>
-                    <span class="exp-time">Cleveland, OH | Mar 2026 – Present</span>
+                    <span class="exp-time">Cleveland, OH | Mar 2026 – Jul 2026</span>
                 </div>
                 <ul class="stamatiou-bullets">
                     <li>Performed field & laboratory testing of soil and concrete per ASTM, AASHTO, and DOT standards.</li>
@@ -760,6 +872,30 @@
             </div>
         </section>
 
+        <!-- Education -->
+        <section id="education">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <span class="section-sub">06 / Academics</span>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span class="exp-role">Master of Science in Information Technology & Management</span>
+                    <span class="exp-time">Campbellsville University | May 2025</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Focus: Engineering Data Management, Technical Project Management, Systems Optimization</p>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-row">
+                    <span class="exp-role">Bachelor of Technology in Civil Engineering</span>
+                    <span class="exp-time">JNTUK, India | July 2022</span>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Focus: Structural Engineering, Transportation, Strength of Materials, Surveying</p>
+            </div>
+        </section>
+
         <!-- Footer -->
         <footer>
             <span>© 2026 Naga Unnath Kumar Chowdary Potluri</span>
@@ -779,7 +915,7 @@
         <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
 
-    <!-- JavaScript Slider Controls -->
+    <!-- JavaScript Controls -->
     <script>
         function moveCardSlide(button, direction) {
             const slider = button.closest('.card-slider');
@@ -812,7 +948,6 @@
             { src: 'field-6.jpeg'},
             { src: 'field-7.jpeg'},
             { src: 'field-8.jpeg'}
-            
         ];
 
         let currentIndex = 0;
@@ -842,9 +977,9 @@
             const imgEl = document.getElementById('lightbox-img');
             imgEl.src = item.src;
             imgEl.onerror = function() {
-                this.src = 'https://via.placeholder.com/820x450?text=' + encodeURIComponent(item.caption);
+                this.src = 'https://via.placeholder.com/820x450?text=Field+Photo+' + (currentIndex + 1);
             };
-            document.getElementById('lightbox-caption').innerText = item.caption + ` (${currentIndex + 1} of ${additionalPhotos.length})`;
+            document.getElementById('lightbox-caption').innerText = `Field Photo ${currentIndex + 1} of ${additionalPhotos.length}`;
         }
 
         document.getElementById('lightbox').addEventListener('click', function(e) {
